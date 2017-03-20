@@ -63,8 +63,10 @@
         "secure-http": true
     },
     "scripts": {
-        "post-install-cmd": [
-            "@run-typo3-console-stack"
+        "post-install-cmd": [],
+        "post-update-cmd": [
+            "[ -d ./web/typo3temp/ ] && composer run-script run-typo3-console-stack || echo 'Skipped! First install...'",
+            "[ -d ./web/typo3temp/ ] && composer run-script setup-active-extensions || echo 'Skipped! First install...'"
         ],
 
         "database-update-schema": [
