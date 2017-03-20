@@ -1,0 +1,48 @@
+
+# global extbase settings
+config.tx_extbase {
+    persistence {
+        storagePid = 1
+        recursive = 99
+
+        classes {
+            Portrino\PxSemanticExample\Domain\Model\News {
+                mapping {
+                    tableName = tx_news_domain_model_news
+                }
+            }
+        }
+    }
+}
+
+plugin.tx_pxsemantic {
+    settings {
+        rest {
+            endpoints {
+                pages {
+                    entity = Portrino\PxSemantic\SchemaOrg\CreativeWork
+                    resource = Portrino\PxSemantic\Domain\Model\Page
+                    processors {
+                        0 {
+                            className = Portrino\PxSemantic\Processor\PageProcessor
+                        }
+                    }
+                }
+
+                news {
+                    entity = Portrino\PxSemantic\SchemaOrg\NewsArticle
+                    resource = Portrino\PxSemanticExample\Domain\Model\News
+                    processors {
+                        # processor to set properties of an entity via TypoScript
+                        0 {
+                            className = Portrino\PxSemanticExample\Processor\NewsProcessor
+                            settings {
+                                detailPid = {$plugin.tx_news.settings.defaultDetailPid}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

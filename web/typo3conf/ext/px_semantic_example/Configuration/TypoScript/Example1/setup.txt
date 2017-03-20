@@ -1,0 +1,50 @@
+lib.structuredDataMarkupOrganization < lib.structuredDataMarkup
+lib.structuredDataMarkupOrganization {
+    settings {
+        entity = Portrino\PxSemantic\SchemaOrg\Organization
+        processors {
+            # processor to set properties of an entity via TypoScript
+            0 {
+                className = Portrino\PxSemantic\Processor\TypoScriptProcessor
+                settings {
+                    name = TYPO3 Usergroup Dresden e.V.
+
+                    # for string values you do not have to use TEXT datatype, you can just write "key = value"
+                    # US, GB, DE
+                    areaServed = DE
+
+                    contactPoint {
+                        # "customer support", "technical support", "billing support", ...
+                        contactType = customer support
+                        telephone = +49-123-456-78
+                    }
+
+                    logo {
+                        # get the logo image uri via TS and prepend the baseUrl to get the absolute path
+                        url = IMG_RESOURCE
+                        url {
+                            file = typo3conf/ext/px_semantic_example/Resources/Public/Images/typo3-user-group-dd.png
+                            stdWrap.wrap = {TSFE:baseUrl}|
+                            stdWrap.insertData = 1
+                        }
+                    }
+                    # special datatype from px_semantic EXT to define arrays
+                    sameAs = Portrino\PxSemantic\Converter\ArrayConverter
+                    sameAs {
+                        0 = http://www.facebook.com/yourSite/
+                        1 = http://www.youtube.com/user/yourSite/
+                        2 = http://www.pinterest.com/yourSite/
+                    }
+                    # use typolink to generate link to the root page
+                    url = TEXT
+                    url.typolink {
+                        parameter = 1
+                        returnLast = url
+                    }
+                }
+            }
+        }
+    }
+}
+
+page.headerData.1490004459177 < lib.structuredDataMarkupOrganization

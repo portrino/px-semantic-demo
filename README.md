@@ -28,3 +28,12 @@ composer install
 <pre>
 composer run-script run-typo3-console-stack
 </pre>
+
+
+## Configure TS
+
+<pre>
+
+
+
+</pre>

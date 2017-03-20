@@ -1,0 +1,101 @@
+lib.tx_news = RECORDS
+lib.tx_news {
+    dontCheckPid = 1
+    tables = tx_news_domain_model_news
+    source.data = GP:tx_news_pi1|news
+    source.intval = 1
+    conf.tx_news_domain_model_news = TEXT
+    conf.tx_news_domain_model_news {
+        field =
+        htmlSpecialChars = 1
+    }
+    wrap = |
+
+}
+
+lib.newsLink = TEXT
+lib.newsLink {
+    typolink {
+        parameter.data = TSFE:id
+        forceAbsoluteUrl = 1
+        returnLast = url
+        useCacheHash = 1
+        additionalParams.cObject = COA
+        additionalParams.cObject {
+            10 = TEXT
+            10.dataWrap = &tx_news_pi1[news]={GP:tx_news_pi1|news}
+            10.if.isTrue.data = GP:tx_news_pi1|news
+            20 = TEXT
+            20.dataWrap = &tx_news_pi1[controller]={GP:tx_news_pi1|controller}
+            20.if.isTrue.data = GP:tx_news_pi1|controller
+            30 = TEXT
+            30.dataWrap = &tx_news_pi1[action]={GP:tx_news_pi1|action}
+            30.if.isTrue.data = GP:tx_news_pi1|action
+        }
+    }
+}
+
+lib.structuredDataMarkupNewsArticle < lib.structuredDataMarkup
+lib.structuredDataMarkupNewsArticle {
+    settings {
+        # classname of the entity (root) which should be rendered
+        entity = Portrino\PxSemantic\SchemaOrg\NewsArticle
+        processors {
+            # processor to set properties of an entity via TypoScript
+            0 {
+                className = Portrino\PxSemantic\Processor\TypoScriptProcessor
+                settings {
+                    name < lib.tx_news
+                    name.conf.tx_news_domain_model_news.field = title
+                    headline <.name
+
+                    articleBody < lib.tx_news
+                    articleBody.conf.tx_news_domain_model_news.field = bodytext
+
+                    author {
+                        name < lib.tx_news
+                        name.conf.tx_news_domain_model_news.field = author
+                    }
+
+                    publisher < lib.structuredDataMarkupOrganization.settings.processors.0.settings
+
+                    datePublished < lib.tx_news
+                    datePublished.conf.tx_news_domain_model_news.field = datetime
+                    datePublished.conf.tx_news_domain_model_news.strftime = %FT%TZ
+
+                    dateModified < .datePublished
+                    dateModified.conf.tx_news_domain_model_news.field = tstamp
+
+                    url < lib.newsLink
+                    mainEntityOfPage < .url
+
+                    image {
+                        url < lib.tx_news
+                        url.conf.tx_news_domain_model_news = FILES
+                        url.conf.tx_news_domain_model_news {
+                            references {
+                                table = tx_news_domain_model_news
+                                fieldName = fal_media
+                                uid.field = uid
+                            }
+                            begin = 0
+                            maxItems = 1
+                            renderObj = TEXT
+                            renderObj {
+                                data = file:current:publicUrl
+                                wrap = |
+                            }
+                        }
+                        width < .url
+                        width.conf.tx_news_domain_model_news.renderObj.data = file:current:width
+
+                        height < .url
+                        height.conf.tx_news_domain_model_news.renderObj.data = file:current:height
+                    }
+                }
+            }
+        }
+    }
+}
+
+page.headerData.1490006111242 < lib.structuredDataMarkupNewsArticle

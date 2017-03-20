@@ -1,0 +1,26 @@
+[globalVar = GP:tx_news_pi1|news > 0]
+
+lib.structuredDataMarkupPage < lib.structuredDataMarkup
+lib.structuredDataMarkupPage {
+    settings {
+        # classname of the entity (root) which should be rendered
+        entity = Portrino\PxSemantic\SchemaOrg\CreativeWork
+        processors {
+            # Processors should implement Portrino\PxSemantic\Processors\ProcessorInterface
+            # Processors will be executed in order of the array keys
+            0 {
+                className = Portrino\PxSemantic\Processor\PageProcessor
+                settings {
+                    media {
+                        height = 800
+                        width = 800
+                    }
+                }
+            }
+        }
+    }
+}
+
+page.headerData.1490004747767 < lib.structuredDataMarkupPage
+
+[global]

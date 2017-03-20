@@ -1,0 +1,19 @@
+# news
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/setup.txt">
+# px_semantic
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic/Configuration/TypoScript/setup.txt">
+
+### EXAMPLES ###
+
+# Example 1 - ContactPoint
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic_example/Configuration/TypoScript/Example1/setup.txt">
+
+# Example 2 - CreativeWork
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic_example/Configuration/TypoScript/Example2/setup.txt">
+
+# Example 3 - News
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic_example/Configuration/TypoScript/Example3/setup.txt">
+
+# Example 4 - Hydra API
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic_example/Configuration/TypoScript/Example4/setup.txt">
+

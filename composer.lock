@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ef343e99b2d797e47e496f66c7bdaf7",
+    "content-hash": "f957a03b6037f732fbab0fe565b18ace",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -110,6 +110,71 @@
                 "instantiate"
             ],
             "time": "2015-06-14T21:17:01+00:00"
+        },
+        {
+            "name": "georgringer/news",
+            "version": "5.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/georgringer/news.git",
+                "reference": "71c04b7ca71c7d08b0b6b3eded685d74f67e5e63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/georgringer/news/zipball/71c04b7ca71c7d08b0b6b3eded685d74f67e5e63",
+                "reference": "71c04b7ca71c7d08b0b6b3eded685d74f67e5e63",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": ">=7.6.0,<8.9.99"
+            },
+            "replace": {
+                "news": "self.version",
+                "typo3-ter/news": "self.version"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.4.*@dev",
+                "phpunit/phpunit": "~4.8.0"
+            },
+            "suggest": {
+                "dmitryd/typo3-dd-googlesitemap": "~2.0",
+                "reelworx/rx-shariff": "~7.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeorgRinger\\News\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Georg Ringer",
+                    "homepage": "http://montagmorgen.at",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
+            "homepage": "http://montagmorgen.at",
+            "keywords": [
+                "article",
+                "extension",
+                "news",
+                "typo3"
+            ],
+            "time": "2017-01-21T20:31:40+00:00"
         },
         {
             "name": "helhum/typo3-console",
@@ -516,6 +581,62 @@
                 "exception"
             ],
             "time": "2015-02-10T20:07:52+00:00"
+        },
+        {
+            "name": "portrino/px_semantic",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/portrino/px_semantic.git",
+                "reference": "7ba781d6d936d2914831304fbf87e2030d8c1de9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/portrino/px_semantic/zipball/7ba781d6d936d2914831304fbf87e2030d8c1de9",
+                "reference": "7ba781d6d936d2914831304fbf87e2030d8c1de9",
+                "shasum": ""
+            },
+            "replace": {
+                "px_semantic": "*"
+            },
+            "require-dev": {
+                "api-platform/schema-generator": "dev-master"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Portrino\\PxSemantic\\": "Classes"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Andre Wuttig",
+                    "email": "wuttig@portrino.de",
+                    "homepage": "http://www.portrino.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Structured Data Rendering for TYPO3. Easy Building of Linked Data API based on Hydra.",
+            "homepage": "http://www.portrino.de",
+            "keywords": [
+                "CMS",
+                "Google",
+                "Hydra",
+                "RichSnippets",
+                "Schema Org",
+                "SemanticWeb",
+                "StructuredData",
+                "TYPO3"
+            ],
+            "support": {
+                "email": "dev@portrino.de",
+                "issues": "https://github.com/portrino/px_semantic/issues",
+                "source": "https://github.com/portrino/px_semantic"
+            },
+            "time": "2016-11-11T13:45:51+00:00"
         },
         {
             "name": "psr/http-message",
