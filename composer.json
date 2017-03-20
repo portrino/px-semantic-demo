@@ -1,16 +1,15 @@
 {
     "name": "portrino/semantic",
-    "homepage": "http://www.semantic",
+    "homepage": "http://semantic.portrino.de/",
     "keywords": [
         "TYPO3",
-        "extension",
-        "cedomag"
+        "demo",
+        "semantic"
     ],
     "license": "GPL-2.0+",
     "support": {
-        "email": "dev@portrino.de",
-        "issues": "https://qm.portrino.de/projects/semantic/issues",
-        "source": "http://qm.portrino.de/svn/semantic"
+        "issues": "https://github.com/portrino/px-semantic-demo/issues",
+        "source": "https://github.com/portrino/px-semantic-demo"
     },
     "type": "project",
     "require": {
