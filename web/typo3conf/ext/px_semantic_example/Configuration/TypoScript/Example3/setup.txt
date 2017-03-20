@@ -1,3 +1,5 @@
+[globalVar = GP:tx_news_pi1|news > 0]
+
 lib.tx_news = RECORDS
 lib.tx_news {
     dontCheckPid = 1
@@ -98,4 +100,6 @@ lib.structuredDataMarkupNewsArticle {
     }
 }
 
-page.headerData.1490006111242 < lib.structuredDataMarkupNewsArticle
+page.headerData.1490020722617 < lib.structuredDataMarkupNewsArticle
+
+[global]

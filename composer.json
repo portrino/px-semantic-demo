@@ -35,7 +35,7 @@
         "georgringer/news": "~5.3.2",
         "helhum/typo3-console": "^3.0",
         "jigal/t3adminer": "^7.0",
-        "portrino/px_semantic": "^2.1",
+        "portrino/px_semantic": "dev-master",
 
         "typo3-ter/introduction": "^2.3"
     },

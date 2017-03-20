@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f957a03b6037f732fbab0fe565b18ace",
+    "content-hash": "1568f6df29694c42b2b2a94df62581ea",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -584,7 +584,7 @@
         },
         {
             "name": "portrino/px_semantic",
-            "version": "2.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/portrino/px_semantic.git",
@@ -1517,7 +1517,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "portrino/px_semantic": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

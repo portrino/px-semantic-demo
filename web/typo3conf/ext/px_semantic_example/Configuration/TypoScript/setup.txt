@@ -14,6 +14,6 @@
 # Example 3 - News
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic_example/Configuration/TypoScript/Example3/setup.txt">
 
-# Example 4 - Hydra API
+## Example 4 - Hydra API
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:px_semantic_example/Configuration/TypoScript/Example4/setup.txt">
 

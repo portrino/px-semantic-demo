@@ -1,5 +1,3 @@
-[globalVar = GP:tx_news_pi1|news > 0]
-
 lib.structuredDataMarkupPage < lib.structuredDataMarkup
 lib.structuredDataMarkupPage {
     settings {
@@ -22,5 +20,3 @@ lib.structuredDataMarkupPage {
 }
 
 page.headerData.1490004747767 < lib.structuredDataMarkupPage
-
-[global]

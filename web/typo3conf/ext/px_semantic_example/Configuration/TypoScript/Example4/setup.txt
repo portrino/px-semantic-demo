@@ -28,12 +28,10 @@ plugin.tx_pxsemantic {
                         }
                     }
                 }
-
                 news {
                     entity = Portrino\PxSemantic\SchemaOrg\NewsArticle
                     resource = Portrino\PxSemanticExample\Domain\Model\News
                     processors {
-                        # processor to set properties of an entity via TypoScript
                         0 {
                             className = Portrino\PxSemanticExample\Processor\NewsProcessor
                             settings {
