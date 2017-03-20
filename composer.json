@@ -1,0 +1,105 @@
+{
+    "name": "portrino/semantic",
+    "homepage": "http://www.semantic",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "cedomag"
+    ],
+    "license": "GPL-2.0+",
+    "support": {
+        "email": "dev@portrino.de",
+        "issues": "https://qm.portrino.de/projects/semantic/issues",
+        "source": "http://qm.portrino.de/svn/semantic"
+    },
+    "type": "project",
+    "require": {
+        "typo3/cms": "^7.6",
+
+        "typo3/cms-belog": "^7.6",
+        "typo3/cms-beuser": "^7.6",
+        "typo3/cms-context-help": "^7.6",
+        "typo3/cms-fluid-styled-content": "^7.6",
+        "typo3/cms-filelist": "^7.6",
+        "typo3/cms-impexp": "^7.6",
+        "typo3/cms-info": "^7.6",
+        "typo3/cms-info-pagetsconfig": "^7.6",
+        "typo3/cms-lowlevel": "^7.6",
+        "typo3/cms-reports": "^7.6",
+        "typo3/cms-rsaauth": "^7.6",
+        "typo3/cms-rtehtmlarea": "^7.6",
+        "typo3/cms-setup": "^7.6",
+        "typo3/cms-t3editor": "^7.6",
+        "typo3/cms-tstemplate": "^7.6",
+        "typo3/cms-viewpage": "^7.6",
+
+        "helhum/typo3-console": "^3.0",
+        "jigal/t3adminer": "^7.0",
+
+        "typo3-ter/introduction": "^2.3"
+    },
+    "require-dev": {
+        "mikey179/vfsStream": "^1.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        },
+        {
+            "type": "composer",
+            "url": "https://composer.portrino.de/"
+        }
+    ],
+    "config": {
+        "bin-dir": ".",
+        "preferred-install": "dist",
+        "github-protocols": [
+            "https"
+        ],
+        "secure-http": true
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@run-typo3-console-stack"
+        ],
+
+        "database-update-schema": [
+            "./typo3cms database:updateschema *.add,*.change"
+        ],
+        "generate-package-states": [
+            "rm -f web/typo3conf/PackageStates.php",
+            "./typo3cms install:generatepackagestates"
+        ],
+        "fix-folder-structure": [
+            "./typo3cms install:fixfolderstructure"
+        ],
+        "flush-system-cache": [
+            "rm -fr web/typo3temp/Cache/",
+            "./typo3cms cache:flushgroups system"
+        ],
+        "setup-active-extensions": [
+            "./typo3cms extension:setupactive"
+        ],
+
+        "run-typo3-console-stack": [
+            "@flush-system-cache",
+            "@generate-package-states",
+            "@fix-folder-structure",
+            "@database-update-schema"
+        ]
+    },
+    "extra": {
+        "helhum/typo3-console": {
+            "install-binary": false
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "web"
+        }
+    }
+}
