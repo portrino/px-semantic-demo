@@ -588,12 +588,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/portrino/px_semantic.git",
-                "reference": "7ba781d6d936d2914831304fbf87e2030d8c1de9"
+                "reference": "f5266fcab4918b022c1a476eb490fb71ca955afc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/portrino/px_semantic/zipball/7ba781d6d936d2914831304fbf87e2030d8c1de9",
-                "reference": "7ba781d6d936d2914831304fbf87e2030d8c1de9",
+                "url": "https://api.github.com/repos/portrino/px_semantic/zipball/f5266fcab4918b022c1a476eb490fb71ca955afc",
+                "reference": "f5266fcab4918b022c1a476eb490fb71ca955afc",
                 "shasum": ""
             },
             "replace": {
@@ -636,7 +636,7 @@
                 "issues": "https://github.com/portrino/px_semantic/issues",
                 "source": "https://github.com/portrino/px_semantic"
             },
-            "time": "2016-11-11T13:45:51+00:00"
+            "time": "2017-03-20T15:28:30+00:00"
         },
         {
             "name": "psr/http-message",
