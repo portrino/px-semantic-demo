@@ -39,7 +39,7 @@ config {
     absRefPrefix = 
 }
 
-plugin.tx_pxsemantic.settings.rest.pid = 40
+plugin.tx_pxsemantic.settings.rest.pid = 
 plugin.tx_news.settings.defaultDetailPid = {$plugin.tx_news.settings.defaultDetailPid}
 
 </pre>
@@ -49,5 +49,5 @@ Constants:
 page.logo.file = 1:/introduction/images/theme/IntroductionPackage.png
 page.theme.copyright.text = Proudly powered by <a href="http://www.typo3.org" target="_blank">TYPO3 CMS</a>
 
-plugin.tx_news.settings.defaultDetailPid = 38
+plugin.tx_news.settings.defaultDetailPid =
 </pre>
